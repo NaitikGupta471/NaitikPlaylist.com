@@ -1,0 +1,412 @@
+* {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+body {
+    display: flex;
+    background-color: black;
+    /* color: white; */
+}
+
+.left {
+    max-width: 25vw;
+    overflow-x: hidden;
+}
+
+.left .upperpart {
+    padding: 12px;
+    background-color: #121212;
+    margin: 10px;
+    border-radius: 2px;
+    max-height: 18vh;
+}
+
+.lhs {
+    color: black;
+    height: 28px;
+    margin: 1vh;
+}
+
+.upperpart li {
+    align-items: center;
+}
+
+.left .lowerpart {
+    padding: 12px;
+    background-color: #121212;
+    margin: 10px;
+    border-radius: 2px;
+}
+
+.lowerpart .library {
+    justify-content: space-between;
+}
+
+.songslist {
+    max-height: 59vh;
+    overflow-y: auto;
+}
+
+.songslist ul li {
+    overflow: hidden;
+    max-height: 60px;
+    border: 1px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8.5px;
+    margin: 15px;
+    gap: 10px;
+    margin-left: 0px;
+}
+
+.hamburger {
+    display: none;
+    height: 15px;
+}
+
+.cross {
+    display: none;
+}
+
+.mainupper {
+    width: 72vw;
+    padding: 12px;
+    margin: 10px;
+    margin-left: 0px;
+    background-color: #121212;
+    border-radius: 3px;
+}
+
+.main nav {
+    justify-content: end;
+}
+
+nav .signup {
+    padding: 10px;
+    border: none;
+    background-color: #121212;
+}
+
+nav .login {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.spotifyplaylistarea {
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    margin: 10px;
+    width: 71vw;
+    max-height: 72vh;
+    overflow: auto;
+}
+
+.underline {
+    text-decoration: none;
+    text-underline-offset: 5px;
+}
+
+.playlisthead {
+    background: linear-gradient(145deg, #3a3a3a, #2b2b2b);
+    padding: 30px 50px;
+    margin: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: center;
+    font-size: 2em;
+    border: 2px solid;
+    border-image: linear-gradient(to right, blue, purple) 1;
+    text-shadow: 2px 2px 4px rgba(0, 0.6, 0, 0.7);
+}
+
+.playlists {
+    overflow: auto;
+    margin-top: 23px;
+    margin-left: 18px;
+    margin-right: 23px;
+    margin-bottom: 34px;
+}
+
+
+.card {
+    cursor: pointer;
+    background-color: #242424;
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.imgarea img {
+    height: 20vh;
+    border-radius: 5px;
+}
+
+.songname {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-family: cursive, Helvetica, sans-serif;
+}
+
+.mainlower .playbararea {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playbarsonginfo {
+    font-size: large;
+    margin-left: 20px;
+    width: 20vw;
+    height: 20px;
+    overflow: hidden;
+}
+
+.playarea {
+    position: relative;
+    left: -6vw;
+    margin-top: 5px;
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playarea img {
+    height: 1.8rem;
+}
+
+.timezone {
+    margin-right: 30px;
+    font-size: large;
+}
+
+.playscroll {
+    cursor: pointer;
+    height: 0px;
+    border-radius: 3px;
+    margin: 20px;
+    border: 2px solid white;
+}
+
+.circle {
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    position: relative;
+    left: -0.5%;
+    bottom: 5.5px;
+    border-radius: 50%;
+}
+
+.socialmedia {
+    justify-content: start;
+    gap: 13px;
+    margin-top: 1.2vh;
+    margin-left: 0.5vh;
+}
+
+.unk {
+    font-size: xx-large;
+}
+
+@media only screen and (max-width: 800px) {
+    .playlists img {
+        height: 15vh;
+    }
+
+    * {
+        font-size: small;
+    }
+
+    .playlisthead {
+        padding: 15px 20px;
+        font-size: large;
+    }
+
+    .unk {
+        font-size: x-large;
+    }
+
+    .main,
+    .spotifyplaylistarea,
+    .mainupper {
+        width: 65vw;
+    }
+
+    .mainlower {
+        width: 95vw;
+        margin-left: -27vw;
+    }
+
+    .songslist ul li {
+        font-size: xx-small;
+        max-height: 39px;
+    }
+
+    .left img {
+        height: 1.4rem;
+    }
+
+    .left {
+        min-width: 30vw;
+        height: 86vh;
+    }
+
+    .timezone,
+    .playbarsonginfo {
+        font-size: small;
+        height: 15px;
+        /* width: 70px; */
+        /* margin-right: 6vw; */
+        overflow: hidden;
+    }
+
+    button {
+        font-size: 11px;
+    }
+
+    .playarea {
+        gap: 1vw;
+        margin-left: -2vw;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .songslist ul li {
+        border: 1px solid white;
+        padding: 4px;
+        margin: 5px;
+        gap: 5px;
+        margin-left: 0px;
+    }
+
+    nav {
+        height: 30px;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        font-size: x-small;
+    }
+
+    .unk {
+        font-size: large;
+    }
+
+    .playlists img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .left {
+        transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+        background-color: black;
+        font-size: small;
+        position: absolute;
+        left: -100vw;
+        min-width: 75vw;
+    }
+
+    .main,
+    .mainupper {
+        height: 82vh;
+    }
+
+    .main,
+    .mainlower,
+    .mainupper {
+        margin: 1.3vw;
+        width: 88vw;
+    }
+    .spotifyplaylistarea {
+        margin: 5px;
+        height: 72vh;
+        margin-top: 2vh;
+        width: 86vw;
+    }
+
+    .timezone {
+        font-size: small;
+        width: 70px;
+        margin-right: 2vw;
+        overflow: hidden;
+    }
+
+    .playarea {
+        gap: 1vw;
+        margin-left: -2vw;
+    }
+
+    .playarea img {
+        height: 25px;
+    }
+
+    .playbarsonginfo {
+        margin-left: 15px;
+        font-size: small;
+        width: 80px;
+        max-height: 15px;
+        overflow: hidden;
+    }
+
+    .playbararea {
+        width: 96vw;
+    }
+    
+    .playscroll {
+        margin-left: 1.8vw;
+        width: 89vw;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 30px;
+        left: 28px;
+    }
+
+    .cross {
+        display: block;
+        position: fixed;
+        top: 25px;
+        left: 62vw;
+        z-index: -1;
+    }
+
+    .left img {
+        height: 1.3rem;
+    }
+}
