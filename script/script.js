@@ -20,7 +20,7 @@ let cross = document.querySelector(".cross")
 let playarea = document.querySelector(".playarea")
 songsfilter = []
 async function getsongs() {
-    let ft = await fetch("/songs/")
+    let ft = await fetch("songs/")
     let response = await ft.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -32,8 +32,8 @@ async function getsongs() {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
             songs.push(element.href)
-            songswithunwantedthings.push(element.href.split("/songs/")[1].split(".mp3")[0])
-            let asdf = element.href.split("/songs/")[1].split("mp3")[0].replaceAll("%20", " ").split(" ")
+            songswithunwantedthings.push(element.href.split("songs/")[1].split(".mp3")[0])
+            let asdf = element.href.split("songs/")[1].split("mp3")[0].replaceAll("%20", " ").split(" ")
             let ln = asdf.length
             songsfilter.push(asdf[ln - 2].toUpperCase())
         }
@@ -56,7 +56,7 @@ async function main() {
     let con = document.querySelector(".songslist").getElementsByTagName("ul")[0]
     for (const song of songswithunwantedthings) {
         con.innerHTML = con.innerHTML + `<li class="flex">
-        <img class="invert" src="/additional/song.svg" alt="">
+        <img class="invert" src="additional/song.svg" alt="">
         <div class="listsonginfo">
         <div class="listsongname">${song.replaceAll("%20", " ").split(" ").slice(0, -2).join(" ")}</div>
         </div>
@@ -107,7 +107,7 @@ async function main() {
             playbarsonginfo.textContent = songswithunwantedthings[index].replaceAll("%20", " ").split(" ").slice(0, -2).join(" ")
             // console.log("Currently playing:", songswithunwantedthings[index].replaceAll("%20", " ").split(" ").slice(0,-2).join(" "))
             currentsong.load();
-            but.innerHTML = '<img src="/additional/pause.svg" alt=""></img>'
+            but.innerHTML = '<img src="additional/pause.svg" alt=""></img>'
             currentsong.play();
         });
     });
@@ -116,11 +116,11 @@ async function main() {
     but.addEventListener('click', () => {
         if (currentsong.paused) {
             currentsong.play()
-            but.innerHTML = '<img src="/additional/pause.svg" alt=""></img>'
+            but.innerHTML = '<img src="additional/pause.svg" alt=""></img>'
         }
         else {
             currentsong.pause()
-            but.innerHTML = '<img src="/additional/play.svg" alt=""></img>'
+            but.innerHTML = '<img src="additional/play.svg" alt=""></img>'
         }
     })
     
@@ -149,7 +149,7 @@ async function main() {
                 }
                 else {
                     alert("As you wish!")
-                    but.innerHTML = '<img src="/additional/song.svg" alt=""></img>'
+                    but.innerHTML = '<img src="additional/song.svg" alt=""></img>'
                 }
             }
             else {
@@ -164,7 +164,7 @@ async function main() {
     })
     currentsong.addEventListener("ended", () => {
         playcircle.style.left = -0.5 + '%'
-        but.innerHTML = '<img src="/additional/play.svg" alt=""></img>'
+        but.innerHTML = '<img src="additional/play.svg" alt=""></img>'
     })
     previous.addEventListener("click", () => {
         if (i == 0) {
@@ -175,7 +175,7 @@ async function main() {
             playbarsonginfo.textContent = songswithunwantedthings[i - 1].replaceAll("%20", " ").split(" ").slice(0, -2).join(" ")
             currentsong.load();
             if (currentsong.paused) {
-                but.innerHTML = '<img src="/additional/pause.svg" alt=""></img>'
+                but.innerHTML = '<img src="additional/pause.svg" alt=""></img>'
             }
             currentsong.play();
             i--
@@ -187,7 +187,7 @@ async function main() {
         }
         else {
             currentsong.src = songs[(i + 1)]
-            but.innerHTML = '<img src="/additional/pause.svg" alt=""></img>'
+            but.innerHTML = '<img src="additional/pause.svg" alt=""></img>'
             playbarsonginfo.textContent = songswithunwantedthings[i + 1].replaceAll("%20", " ").split(" ").slice(0, -2).join(" ")
             currentsong.load();
             currentsong.play();
@@ -202,13 +202,13 @@ async function main() {
             currentsong.src = songs[ad]
             playbarsonginfo.textContent = songswithunwantedthings[ad].replaceAll("%20", " ").split(" ").slice(0, -2).join(" ")
             currentsong.load();
-            but.innerHTML = '<img src="/additional/pause.svg" alt=""></img>'
+            but.innerHTML = '<img src="additional/pause.svg" alt=""></img>'
             currentsong.play();
         })
         
     });
     like.addEventListener("click", () => {
-        like.innerHTML = '<img class="invert" src="/additional/liked.svg" alt=""></img>'
+        like.innerHTML = '<img class="invert" src="additional/liked.svg" alt=""></img>'
         alert("I am happy to see that you like our playlist")
     })
     be.forEach(element => {
