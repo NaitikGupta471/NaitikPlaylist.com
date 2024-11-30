@@ -20,7 +20,7 @@ let cross = document.querySelector(".cross")
 let playarea = document.querySelector(".playarea")
 songsfilter = []
 async function getsongs() {
-    let ft = await fetch("songs/")
+    let ft = await fetch("https://github.com/NaitikGupta471/NaitikPlaylist.com/tree/main/songs")
     let response = await ft.text()
     let div = document.createElement("div")
     div.innerHTML = response
